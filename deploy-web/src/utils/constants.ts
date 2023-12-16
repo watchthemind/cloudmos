@@ -68,6 +68,10 @@ export const validatorAddress = "akashvaloper14mt78hz73d9tdwpdvkd59ne9509kxw8yj7
 export const donationAddress = "akash13265twfqejnma6cc93rw5dxk4cldyz2zyy8cdm";
 
 function getApiMainnetUrl() {
+  console.log("a");
+  console.log(process.env);
+  console.log(process.env.API_MAINNET_BASE_URL);
+  
   if (process.env.API_MAINNET_BASE_URL) return process.env.API_MAINNET_BASE_URL;
   if (typeof window === "undefined") return "http://localhost:3080";
   if (window.location?.hostname === "deploy.cloudmos.io") return productionMainnetApiUrl;
