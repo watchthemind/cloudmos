@@ -104,6 +104,7 @@ function getApiUrl() {
 }
 
 function getProviderProxyHttpUrl() {
+  if (process.env.HTTP_PROXY) return process.env.HTTP_PROXY;
   if (typeof window === "undefined") return "http://localhost:3040";
   if (window.location?.hostname === "deploybeta.cloudmos.io") return "https://deployproxybeta.cloudmos.io";
   if (window.location?.hostname === "deploy.cloudmos.io") return "https://providerproxy.cloudmos.io";
@@ -111,6 +112,8 @@ function getProviderProxyHttpUrl() {
 }
 
 function getProviderProxyWsUrl() {
+  if (process.env.WS_PROXY) return process.env.WS_PROXY;
+  
   if (typeof window === "undefined") return "ws://localhost:3040";
   if (window.location?.hostname === "deploybeta.cloudmos.io") return "wss://deployproxybeta.cloudmos.io";
   if (window.location?.hostname === "deploy.cloudmos.io") return "wss://providerproxy.cloudmos.io";
