@@ -29,6 +29,7 @@ const productionSandboxApiUrl = "https://api-sandbox.cloudmos.io";
 
 export const isProd = process.env.NODE_ENV === "production";
 export const isMaintenanceMode = process.env.MAINTENANCE_MODE === "true";
+
 export const BASE_API_MAINNET_URL = getApiMainnetUrl();
 export const BASE_API_TESTNET_URL = getApiTestnetUrl();
 export const BASE_API_SANDBOX_URL = getApiSandboxUrl();
@@ -68,11 +69,12 @@ export const validatorAddress = "akashvaloper14mt78hz73d9tdwpdvkd59ne9509kxw8yj7
 export const donationAddress = "akash13265twfqejnma6cc93rw5dxk4cldyz2zyy8cdm";
 
 function getApiMainnetUrl() {
-  console.log("a");
-  console.log(process.env.API_MAINNET_BASE_URL);
-  
+  console.log("a");  
   if (process.env.API_MAINNET_BASE_URL) return process.env.API_MAINNET_BASE_URL;
-  return window.location?.hostname+":3080"
+  
+
+
+  return window.location?.origin+":3080"
 
   if (typeof window === "undefined") return "http://localhost:3080";
 
@@ -82,7 +84,7 @@ function getApiMainnetUrl() {
 
 function getApiTestnetUrl() {
   if (process.env.API_TESTNET_BASE_URL) return process.env.API_TESTNET_BASE_URL;
-  return window.location?.hostname+":3080"
+  return window.location?.origin+":3080"
 
   console.log("ccccc");
 
@@ -93,7 +95,7 @@ function getApiTestnetUrl() {
 
 function getApiSandboxUrl() {
   if (process.env.API_SANDBOX_BASE_URL) return process.env.API_SANDBOX_BASE_URL;
-  return window.location?.hostname+":3080"
+  return window.location?.origin+":3080"
 
   console.log("ccccc");
 
@@ -104,7 +106,7 @@ function getApiSandboxUrl() {
 
 function getApiUrl() {
   if (process.env.API_BASE_URL) return process.env.API_BASE_URL;
-  return window.location?.hostname+":3080"
+  return window.location?.origin+":3080"
 
   console.log("ccccc");
 
