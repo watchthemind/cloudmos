@@ -69,17 +69,21 @@ export const donationAddress = "akash13265twfqejnma6cc93rw5dxk4cldyz2zyy8cdm";
 
 function getApiMainnetUrl() {
   console.log("a");
-  console.log(process.env);
   console.log(process.env.API_MAINNET_BASE_URL);
   
   if (process.env.API_MAINNET_BASE_URL) return process.env.API_MAINNET_BASE_URL;
+  console.log("ccccc");
+
   if (typeof window === "undefined") return "http://localhost:3080";
+
   if (window.location?.hostname === "deploy.cloudmos.io") return productionMainnetApiUrl;
   return "http://localhost:3080";
 }
 
 function getApiTestnetUrl() {
   if (process.env.API_TESTNET_BASE_URL) return process.env.API_TESTNET_BASE_URL;
+  console.log("ccccc");
+
   if (typeof window === "undefined") return "http://localhost:3080";
   if (window.location?.hostname === "deploy.cloudmos.io") return productionTestnetApiUrl;
   return "http://localhost:3080";
@@ -87,6 +91,8 @@ function getApiTestnetUrl() {
 
 function getApiSandboxUrl() {
   if (process.env.API_SANDBOX_BASE_URL) return process.env.API_SANDBOX_BASE_URL;
+  console.log("ccccc");
+
   if (typeof window === "undefined") return "http://localhost:3080";
   if (window.location?.hostname === "deploy.cloudmos.io") return productionSandboxApiUrl;
   return "http://localhost:3080";
@@ -94,6 +100,8 @@ function getApiSandboxUrl() {
 
 function getApiUrl() {
   if (process.env.API_BASE_URL) return process.env.API_BASE_URL;
+  console.log("ccccc");
+
   if (typeof window === "undefined") return "http://localhost:3080";
   if (window.location?.hostname === "deploy.cloudmos.io") {
     try {
@@ -109,6 +117,8 @@ function getApiUrl() {
 
 function getProviderProxyHttpUrl() {
   if (process.env.HTTP_PROXY) return process.env.HTTP_PROXY;
+  console.log("ccccc");
+
   if (typeof window === "undefined") return "http://localhost:3040";
   if (window.location?.hostname === "deploybeta.cloudmos.io") return "https://deployproxybeta.cloudmos.io";
   if (window.location?.hostname === "deploy.cloudmos.io") return "https://providerproxy.cloudmos.io";
@@ -117,7 +127,8 @@ function getProviderProxyHttpUrl() {
 
 function getProviderProxyWsUrl() {
   if (process.env.WS_PROXY) return process.env.WS_PROXY;
-  
+  console.log("ccccc");
+
   if (typeof window === "undefined") return "ws://localhost:3040";
   if (window.location?.hostname === "deploybeta.cloudmos.io") return "wss://deployproxybeta.cloudmos.io";
   if (window.location?.hostname === "deploy.cloudmos.io") return "wss://providerproxy.cloudmos.io";
