@@ -72,7 +72,7 @@ function getApiMainnetUrl() {
   console.log(process.env.API_MAINNET_BASE_URL);
   
   if (process.env.API_MAINNET_BASE_URL) return process.env.API_MAINNET_BASE_URL;
-  console.log("ccccc");
+  return window.location?.hostname+":3080"
 
   if (typeof window === "undefined") return "http://localhost:3080";
 
@@ -82,6 +82,8 @@ function getApiMainnetUrl() {
 
 function getApiTestnetUrl() {
   if (process.env.API_TESTNET_BASE_URL) return process.env.API_TESTNET_BASE_URL;
+  return window.location?.hostname+":3080"
+
   console.log("ccccc");
 
   if (typeof window === "undefined") return "http://localhost:3080";
@@ -91,6 +93,8 @@ function getApiTestnetUrl() {
 
 function getApiSandboxUrl() {
   if (process.env.API_SANDBOX_BASE_URL) return process.env.API_SANDBOX_BASE_URL;
+  return window.location?.hostname+":3080"
+
   console.log("ccccc");
 
   if (typeof window === "undefined") return "http://localhost:3080";
@@ -100,6 +104,8 @@ function getApiSandboxUrl() {
 
 function getApiUrl() {
   if (process.env.API_BASE_URL) return process.env.API_BASE_URL;
+  return window.location?.hostname+":3080"
+
   console.log("ccccc");
 
   if (typeof window === "undefined") return "http://localhost:3080";
@@ -117,7 +123,7 @@ function getApiUrl() {
 
 function getProviderProxyHttpUrl() {
   if (process.env.HTTP_PROXY) return process.env.HTTP_PROXY;
-  console.log("ccccc");
+  return "https://providerproxy.cloudmos.io";
 
   if (typeof window === "undefined") return "http://localhost:3040";
   if (window.location?.hostname === "deploybeta.cloudmos.io") return "https://deployproxybeta.cloudmos.io";
@@ -127,8 +133,7 @@ function getProviderProxyHttpUrl() {
 
 function getProviderProxyWsUrl() {
   if (process.env.WS_PROXY) return process.env.WS_PROXY;
-  console.log("ccccc");
-
+  return "wss://providerproxy.cloudmos.io";
   if (typeof window === "undefined") return "ws://localhost:3040";
   if (window.location?.hostname === "deploybeta.cloudmos.io") return "wss://deployproxybeta.cloudmos.io";
   if (window.location?.hostname === "deploy.cloudmos.io") return "wss://providerproxy.cloudmos.io";
